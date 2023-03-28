@@ -1,0 +1,72 @@
+package Kegiatan1;
+import java.util.ArrayList;
+
+public class Kegiatan1 {
+    public static void main(String[] args) {
+
+
+        //NO-1
+        System.out.println("NO-1");
+        ArrayList<String> kosong = new ArrayList<>();
+        kosong.add("Angsa");kosong.add("Bebek");kosong.add("Cicak");kosong.add("Domba");kosong.add("Elang");kosong.add("Gajah");
+        System.out.println("Output : "+kosong);
+
+
+        //NO-2
+        System.out.println("\nNO-2");
+        kosong.add("Badak"); kosong.add("Bebek");
+        System.out.println("Output : "+kosong);
+
+
+        int jumlahbebek = 0;
+        for (int i=0; i < kosong.size(); i++){
+            if (kosong.get(i).equals("Bebek")){
+                jumlahbebek++;
+                System.out.println("Posisi Index : "+i);
+            }
+
+        }
+        System.out.println("Bebek = "+jumlahbebek);
+
+        //NO-3
+        System.out.println("\nNO-3");
+        kosong.remove(1);
+        System.out.println("Output : "+kosong);
+
+        //NO-4
+        System.out.println("\nN0-4");
+        System.out.println("Index Ke-0 : "+kosong.get(0));
+        System.out.println("Index Ke-2 :"+kosong.get(2));
+        kosong.remove(0);
+        System.out.println(kosong);
+
+        //NO-5
+        System.out.println("\nNO-5");
+        kosong.set(0,"Ular");
+        System.out.println(kosong);
+        kosong.add(2,"Itik");
+        System.out.println(kosong);
+
+        //NO-6
+        System.out.println("\nNO-6");
+        kosong.subList(1,5).clear();
+        System.out.println(kosong);
+
+        //NO-7
+        System.out.println("\nNO-7");
+        System.out.println("Element Pertama : "+kosong.get(0));
+        System.out.println("Element Terakhir : "+kosong.get(kosong.size()-1));
+
+        //NO-8
+        System.out.println("\nNO-8");
+        System.out.println("Jumlah Element pada Arraylist : "+kosong.size());
+
+        //NO-9
+        System.out.println("\nNO-9");
+        for (int j=0; j < kosong.size(); j++){
+            if (kosong.get(j).equals("Badak")){
+                System.out.println("Posisi Index Badak : "+j);
+            }
+        }
+    }
+}
