@@ -1,0 +1,63 @@
+package Kegiatan2;
+
+public class LinkedList {
+    Node head; // kepala LinkedList
+
+    // Node dalam LinkedList
+    static class Node {
+        int data;
+        Node next;
+
+        Node(int d) {
+            data = d;
+            next = null;
+        }
+    }
+
+    // Fungsi untuk menambahkan node baru dan mengurutkan LinkedList
+    public void addNode(int value) {
+        Node newNode = new Node(value);
+
+        // Jika LinkedList masih kosong atau nilai pada node pertama lebih besar dari nilai baru
+        if (head == null || head.data > value) {
+            newNode.next = head;
+            head = newNode;
+            return;
+        }
+
+        Node current = head;
+
+        // Mencari posisi yang tepat untuk node baru
+        while (current.next != null && current.next.data < value) {
+            current = current.next;
+        }
+
+        newNode.next = current.next;
+        current.next = newNode;
+    }
+
+    // Fungsi untuk mencetak semua node dalam LinkedList
+    public void printList() {
+        Node current = head;
+        while (current != null) {
+            System.out.print(current.data + " ");
+            current = current.next;
+        }
+        System.out.println();
+    }
+
+    // Main method untuk menjalankan program
+    public static void main(String[] args) {
+        LinkedList linkedList = new LinkedList();
+
+        linkedList.addNode(8);
+        linkedList.addNode(7);
+        linkedList.addNode(1);
+        linkedList.addNode(4);
+        linkedList.addNode(6);
+        linkedList.addNode(2);
+        linkedList.addNode(3);
+
+        linkedList.printList();
+    }
+}
